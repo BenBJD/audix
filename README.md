@@ -24,6 +24,7 @@ Maybe like an ableton app but with a massive crowdsourced sample library and eas
 - All should be added to database with any other information or tags given by the use
 - A rating system, maybe other metrics would help UX
 - Mongo might work well here as there shouldnt really need to be relations
+- TODO: Think about whether samples could also just be a midi clip with data such as which instrument and control values
 
 ## Audio engine
 - Gonna be difficult
@@ -73,3 +74,6 @@ Maybe like an ableton app but with a massive crowdsourced sample library and eas
 - Maybe an arrangement view that just automatically triggers clips
 - Can be exported to mp3 probs
 - A user can record themselves making a song and upload it to do the whole short video thing all the kids love
+
+# So how to do this
+- Build the synthesiser, sequencer (and midi) and sound engine till there is a few midi clips that 
