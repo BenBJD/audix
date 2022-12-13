@@ -76,5 +76,10 @@ Maybe like an ableton app but with a massive crowdsourced sample library and eas
 - A user can record themselves making a song and upload it to do the whole short video thing all the kids love
 
 ## So how to do this
-- Build the synthesiser, sequencer (and midi) and sound engine till there is a few midi clips that can be played
+- Build a synthesizer and sound engine as a standalone app
+- Build the main app in react native
+- Backend API in express probably
+- Make the app work with the api
+- finally implement the synth and sound engine into the main app
+- more instruments if i cba
 - The app will be in react native, using as much javascript as possible but probably gonna have to drop to java and c++ for actual sound making stuff
