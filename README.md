@@ -1,50 +1,34 @@
-# Audix
-Ok so pivoting. Now there will be a device e.g a pc which runs the main software in a browser, and then people can use their phones to play instruments. A collaborative band app thing idk. Should be a bit easier and probably actually better
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-No more users and auth, no more sample library and some pther stuff probably. Saving clips and songs could be done in future but not now.
+## Getting Started
 
-## Implementation
+First, run the development server:
 
-### Main device (PC)
-- Audio engine (Now browser based)
-- Clock
-- Websocket API so other devices can connect
+```bash
+npm run dev
+# or
+yarn dev
+```
 
-### Child devices (Phones)
-- Synthesizer
-- Sampler (low priority)
-- Sequencer/drum machine
-- Microphone and other inputs
-- Effects
-- Should basically just be controls for stuff in the main pc, so I dont need to make a synth engine on android
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## Audio engine
-- Browser based audio should be much easier
-- Needs to keep a clock also that somehow keeps in time witt child devices and with minimal latency
-- Mixes sources and outputs them, no inputs
+You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
-## Synthesiser
-- Not sure what exactly to do here
-- Can be its own seperate thing
-- Keeping it modular would probably make it easier to make and fun to use
-- So like make a vco, vcf, mixer, envelopes that are independant and can be reused
-- Or maybe like a not modular fm synth or something? gonna require some research cos i want it to be relatively multi-use not just a boring mono synth
-- Seperate bass synth with a sequencer and lead poly synth could be done?
+[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
 
-## Sequencer
-- Using the master clock, run a reliable 16 or something step sequencer
-- Can be used for control of bass synth and drum machine
+The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-## Microphone and other inputs
-- Microphone can be used as an input, live streaming to the main pc
-- Guitar or other instruments and vocals could all be used
+## Learn More
 
-## Effects
-- Basic amp and pedals for a guitar input
-- Normal studio effects like reverb and filters cos everyone loves that shit
+To learn more about Next.js, take a look at the following resources:
 
-## So how to do this
-- Build the sound engine and stuff to run in node
-- Make the React based web interface for the main device
-- Make a synth, sequencer, and drum machine to run in node
-- Make a react native app that can control everything e.g. frontend for the instruments and play/pause
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
