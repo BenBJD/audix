@@ -9,16 +9,24 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@heroicons/react": "^2.0.13",
     "@next/font": "13.0.7",
+    "@reduxjs/toolkit": "^1.9.1",
     "eslint": "8.29.0",
     "eslint-config-next": "13.0.7",
+    "material-icons": "^1.13.1",
     "next": "13.0.7",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-redux": "^8.0.5",
+    "react-slider": "^2.0.4",
+    "redux": "^4.2.0",
+    "tone": "^14.7.77"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.13",
     "postcss": "^8.4.20",
+    "prettier": "^2.8.1",
     "tailwindcss": "^3.2.4"
   }
 }
