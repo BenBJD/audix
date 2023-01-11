@@ -5,6 +5,7 @@ import {Mixer} from "../components/Mixer";
 import * as Tone from "tone";
 import store from "../store"
 import {Provider} from "react-redux"
+import { useEffect, useState } from "react"
 
 // eslint-disable-next-line import/no-anonymous-default-export,react/display-name
 export default () => {
@@ -17,16 +18,24 @@ export default () => {
 
 const Main = () => {
   // When audio is set up, we can start the app
-  Tone.start()
-    .then(() => {
-      return (
-        <div className="h-screen flex flex-col bg-gray-800">
+  const [audioReady, setAudioReady] = useState(false)
+
+  return (
+    <div className="h-screen flex flex-col bg-gray-800">
+      {audioReady && (
+        <>
           <Header />
           <div className="h-full">
             <Waveform />
             <Mixer />
           </div>
-        </div>
-      )
-    })
+        </>
+      )}
+      {!audioReady && (
+        <button onClick={() => Tone.start().then(() => {
+          setAudioReady(true)
+        })}>Start</button>
+      )}
+    </div>
+  )
 }

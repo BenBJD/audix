@@ -3,6 +3,7 @@ import * as Tone from "tone";
 import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { setPlayState } from "../slices/projectSlice"
+import { drumSampler, leadSynth } from "./audio/Instruments"
 
 const Transport = () => {
   const dispatch = useDispatch()

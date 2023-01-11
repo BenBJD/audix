@@ -13,8 +13,14 @@ const devicesSlice = createSlice({
     },
     {
       id: 1,
-      instrument: "lead",
-      preset: "jupiterLead",
+      instrument: "leadSynth",
+      controls: {
+        "waveform": "sine",
+        "sustain": 1,
+        "attack": 0.1,
+        "decay": 0.1,
+        "release": 0.1,
+      },
       name: "Jupiter Lead",
       username: "Friend 1",
       bgColor: "bg-yellow-700"

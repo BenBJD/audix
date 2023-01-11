@@ -1,8 +1,9 @@
 import ReactSlider from 'react-slider'
 import {MixerSlider} from "./MixerSlider";
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { XMarkIcon } from "@heroicons/react/24/outline"
+import { leadSynth } from "./audio/Instruments"
 
 const SoloButton = props => {
   if (props.mixerSolo) {
@@ -83,7 +84,17 @@ const Device = (props) => {
   const [mixerLevel, setMixerLevel] = useState(100)
   const [mixerMute, setMixerMute] = useState(false)
   const [mixerSolo, setMixerSolo] = useState(false)
-  const [instrument, setInstrument] = useState(props.instrument)
+  const [instrument, setInstrument] = useState(null)
+
+  useEffect(() => {
+    switch (props.instrument) {
+      case "leadSynth": {
+        setInstrument(leadSynth(props.controls.waveform, props.controls.decay, props.controls.attack, props.controls.sustain, props.controls.release))
+      }
+      // TODO: the rest of these
+    }
+  }, [props.controls.attack, props.controls.decay, props.controls.release, props.controls.sustain, props.controls.waveform, props.instrument])
+
   return (
     <div className={props.bgColor + " basis-1/4 flex flex-col p-3 gap-3"}>
       <DeviceHeader
@@ -112,10 +123,7 @@ export const Mixer = () => {
   const devices = useSelector(state => state.devices)
   return (
       <div className="h-2/3 bg-gray-900 flex flex-row">
-        <Device {...devices[0]} />
         <Device {...devices[1]} />
-        <Device {...devices[2]} />
-        <Device {...devices[3]} />
       </div>
   )
 }

@@ -5,20 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="041c8033-2b49-46ea-bd85-725cc58d9de1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/components/MixerSlider.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/waveform.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/samples/hihat_closed.wav" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/connectedDevices.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/effects.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Effects.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/header.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/mixer.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Mixer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/transport.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/waveform.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Waveform.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Mixer.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Mixer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/audio/Instruments.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/audio/Instruments.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/next.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/_app.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/globals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/slices/devicesSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/slices/devicesSlice.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +56,7 @@
     "WebServerToolWindowFactoryState": "false",
     "javascript.nodejs.core.library.configured.version": "16.16.0",
     "javascript.nodejs.core.library.typings.version": "16.18.10",
-    "last_opened_file_path": "//wsl$/Ubuntu/home/ben/sync/sync/repos/audix",
+    "last_opened_file_path": "//wsl$/Ubuntu/home/ben/sync/sync/repos/audix/public/samples",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.standard": "true",
     "node.js.detected.package.tslint": "true",
@@ -84,6 +80,9 @@
     </option>
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="\\wsl$\Ubuntu\home\ben\sync\sync\repos\audix\public\samples" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="\\wsl$\Ubuntu\home\ben\sync\sync\repos\audix\components" />
       <recent name="\\wsl$\Ubuntu\home\ben\sync\sync\repos\audix\public" />
@@ -115,6 +114,7 @@
       <workItem from="1670890888897" duration="14098000" />
       <workItem from="1671234710864" duration="31701000" />
       <workItem from="1671575349747" duration="6480000" />
+      <workItem from="1671897542259" duration="6784000" />
     </task>
     <servers />
   </component>
