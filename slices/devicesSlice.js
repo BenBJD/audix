@@ -1,57 +1,40 @@
-import {createSlice} from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit"
 
 const devicesSlice = createSlice({
-  name: 'devices',
-  initialState: [
-    {
-      id: 0,
-      instrument: "drums",
-      preset: "rock",
-      name: "Roland TD-17KV",
-      username: "Ben",
-      bgColor: "bg-red-700"
+    name: "devices",
+    initialState: [],
+    reducers: {
+        newDevice: (state, action) => {
+            state.push(action.payload)
+            return state
+        },
+        removeDevice: (state, action) => {
+            state = state.filter((device) => device.id !== action.payload)
+            return state
+        },
+        setInstrumentControl: (state, action) => {
+            state = state.map((device) => {
+                if (device.id === action.payload.id) {
+                    device.controls[action.payload.control] =
+                        action.payload.value
+                }
+                return device
+            })
+            return state
+        },
+        setVariable: (state, action) => {
+            state = state.map((device) => {
+                if (device.id === action.payload.id) {
+                    device[action.payload.variable] = action.payload.value
+                }
+                return device
+            })
+            return state
+        },
     },
-    {
-      id: 1,
-      instrument: "leadSynth",
-      controls: {
-        "waveform": "sine",
-        "sustain": 1,
-        "attack": 0.1,
-        "decay": 0.1,
-        "release": 0.1,
-      },
-      name: "Jupiter Lead",
-      username: "Friend 1",
-      bgColor: "bg-yellow-700"
-    },
-    {
-      id: 2,
-      instrument: "bass",
-      preset: "jupiterBass",
-      name: "Bass Synth",
-      username: "Friend 2",
-      bgColor: "bg-blue-700"
-    },
-    {
-      id: 3,
-      instrument: "pad",
-      preset: "jupiterPad",
-      name: "Nice Pad",
-      username: "Friend 3",
-      bgColor: "bg-green-700"
-    }
-  ],
-  reducers: {
-    addDevice: (state, action) => {
-      state.push(action.payload);
-    },
-    removeDevice: (state, action) => {
-      state = state.filter(device => device.id !== action.payload)
-    }
-  },
 })
 
-export const {addDevice, removeDevice} = devicesSlice.actions
+export const { newDevice, removeDevice, setInstrumentControl, setVariable } =
+    devicesSlice.actions
 
 export default devicesSlice.reducer
