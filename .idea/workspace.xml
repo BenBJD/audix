@@ -5,42 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="041c8033-2b49-46ea-bd85-725cc58d9de1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/jsonSchemas.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/Devices.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hooks/sequencers.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/samples/808-Clap01.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/samples/808-HiHats01.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/samples/808-Kicks01.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/samples/808-OpenHiHats01.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/samples/808-Ride1.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/samples/808-Snare01.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/steptemplate.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/Buttons.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/effects/DeviceEffect.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/instruments/DrumKit.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/instruments/SequencedLeadSynth.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/slices/polySequencerSlice.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/slices/sequencerSlice.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webrtc.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.prettierrc" beforeDir="false" afterPath="$PROJECT_DIR$/.prettierrc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Effects.js" beforeDir="false" afterPath="$PROJECT_DIR$/samples/server.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Devices.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Devices.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Mixer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/MixerSlider.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/MixerSlider.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Waveform.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Waveform.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/audio/Effects.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/audio/Instruments.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/next.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hooks/sequencers.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/_app.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/postcss.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/postcss.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/next.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/next.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/thirteen.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/thirteen.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/vercel.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/vercel.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/waveform.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/waveform.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/slices/devicesSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/slices/devicesSlice.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/slices/projectSlice.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/store.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/globals.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,6 +95,13 @@
       <recent name="$PROJECT_DIR$/features/currentProject" />
       <recent name="$PROJECT_DIR$" />
     </key>
+    <key name="es6.move.members.recent.items">
+      <recent name="$PROJECT_DIR$/components/Devices.js" />
+      <recent name="$PROJECT_DIR$/pages/_app.js" />
+      <recent name="$PROJECT_DIR$/components/instruments/SequencedLeadSynth.js" />
+      <recent name="$PROJECT_DIR$/components/instruments/DrumKit.js" />
+      <recent name="$PROJECT_DIR$/components/Effects/DeviceEffect.js" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="dev" type="js.build_tools.npm" nameIsGenerated="true">
@@ -157,11 +142,22 @@
       <workItem from="1677592730709" duration="127000" />
       <workItem from="1677770451892" duration="17066000" />
       <workItem from="1677861023886" duration="8015000" />
-      <workItem from="1678320857018" duration="2802000" />
+      <workItem from="1678320857018" duration="16116000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

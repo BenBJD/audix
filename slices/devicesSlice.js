@@ -2,7 +2,55 @@ import { createSlice } from "@reduxjs/toolkit"
 
 const devicesSlice = createSlice({
     name: "devices",
-    initialState: [],
+    initialState: [
+        {
+            id: 0,
+            name: "Bass Synth",
+            username: "Ben",
+            bgColor: "bg-yellow-700",
+            instrument: "SequencedLeadSynth",
+            controls: {
+                level: 100,
+                pan: 0,
+                attack: 0.01,
+                decay: 0.2,
+                sustain: 0.5,
+                release: 0.01,
+                waveform: "sine",
+            },
+        },
+        {
+            id: 1,
+            name: "Lead Synth",
+            username: "Not Ben",
+            bgColor: "bg-blue-700",
+            instrument: "SequencedLeadSynth",
+            controls: {
+                level: 100,
+                pan: 0,
+                attack: 0.01,
+                decay: 0.2,
+                sustain: 0.5,
+                release: 0.01,
+                waveform: "sine",
+            },
+        },
+        {
+            id: 2,
+            name: "Drum",
+            username: "Still Not Ben",
+            bgColor: "bg-green-700",
+            instrument: "DrumKit",
+            controls: {
+                level: 100,
+                pan: 0,
+                attack: 0.01,
+                decay: 0.2,
+                sustain: 0.5,
+                release: 0.01,
+            },
+        },
+    ],
     reducers: {
         newDevice: (state, action) => {
             state.push(action.payload)

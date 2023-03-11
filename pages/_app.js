@@ -1,11 +1,12 @@
 import "../styles/globals.css"
 import { Header } from "../components/Header"
 import { Waveform } from "../components/Waveform"
-import { Devices } from "../components/Devices"
 import * as Tone from "tone"
 import store from "../store"
-import { Provider, useDispatch, useSelector } from "react-redux"
-import { createContext, useContext, useEffect, useState } from "react"
+import { Provider, useSelector } from "react-redux"
+import { useEffect, useState } from "react"
+import { SequencedLeadSynth } from "../components/instruments/SequencedLeadSynth"
+import { DrumKit } from "../components/instruments/DrumKit"
 
 // eslint-disable-next-line import/no-anonymous-default-export,react/display-name
 export default () => {
@@ -16,6 +17,37 @@ export default () => {
     )
 }
 
+export const Devices = () => {
+    const devices = useSelector((state) => state.devices)
+    return (
+        <div className="h-2/3 bg-gray-900 flex flex-row">
+            {devices.map((device) => {
+                switch (device.instrument) {
+                    case "SequencedLeadSynth":
+                        return (
+                            <SequencedLeadSynth
+                                instrumentId={device.id}
+                                username={device.username}
+                                bgColor={device.bgColor}
+                                name={device.name}
+                                key={device.id}
+                            />
+                        )
+                    case "DrumKit":
+                        return (
+                            <DrumKit
+                                instrumentId={device.id}
+                                username={device.username}
+                                bgColor={device.bgColor}
+                                name={device.name}
+                                key={device.id}
+                            />
+                        )
+                }
+            })}
+        </div>
+    )
+}
 const Main = () => {
     // When audio is set up, we can start the app
     const [audioReady, setAudioReady] = useState(false)

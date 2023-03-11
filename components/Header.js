@@ -7,9 +7,18 @@ import {
 import * as Tone from "tone"
 import { useDispatch, useSelector } from "react-redux"
 import { useEffect, useState } from "react"
+import dynamic from "next/dynamic"
+
+const PeerJSIcon = dynamic(
+    () => import("../webrtc").then((mod) => mod.PeerJSIcon),
+    {
+        ssr: false,
+    }
+)
 
 const Transport = () => {
     const dispatch = useDispatch()
+
     const [transportPosition, setTransportPosition] = useState("0:0:0")
     const [playState, setPlayState] = useState("stopped")
 
@@ -112,6 +121,7 @@ export const Header = () => {
             <div className="basis-1/12 flex justify-center">
                 <h2 className="text-gray-200 text-3xl">audix</h2>
             </div>
+            <PeerJSIcon />
             <Transport />
             <div className="basis-1/12 flex justify-end">
                 <div className="w-10">
