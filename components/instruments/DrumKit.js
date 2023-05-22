@@ -21,7 +21,7 @@ export const DrumKit = (props) => {
     // Polyphonic steps
     // Objects are used instead of sub-arrays because of how Tone.js handles
     const steps = useSelector((state) => {
-        return state.polySequencers.find(
+        return state.sequencers.find(
             (s) => s.instrumentId === props.instrumentId
         ).steps
     })

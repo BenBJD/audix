@@ -5,20 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="041c8033-2b49-46ea-bd85-725cc58d9de1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/components/Buttons.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/effects/DeviceEffect.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/instruments/DrumKit.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/instruments/SequencedLeadSynth.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/slices/polySequencerSlice.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/slices/sequencerSlice.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webrtc.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hooks.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/Devices.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Devices.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hooks/sequencers.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/_app.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/instruments/DrumKit.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/instruments/DrumKit.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/instruments/SequencedLeadSynth.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/instruments/SequencedLeadSynth.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/slices/devicesSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/slices/devicesSlice.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/slices/polySequencerSlice.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/slices/sequencerSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/slices/sequencerSlice.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/store.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webrtc.js" beforeDir="false" afterPath="$PROJECT_DIR$/webrtc.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,29 +49,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;18.12.1&quot;,
-    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;18.11.18&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/bendavison/sync/sync/repos/audix/samples&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/bendavison/sync/sync/repos/audix/node_modules/prettier&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/Users/bendavison/Library/Application Support/JetBrains/Toolbox/apps/WebStorm/ch-0/223.8617.44/WebStorm.app/Contents/plugins/javascript-impl/jsLanguageServicesImpl/external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "devel",
+    "javascript.nodejs.core.library.configured.version": "18.12.1",
+    "javascript.nodejs.core.library.typings.version": "18.16.12",
+    "last_opened_file_path": "/Users/bendavison/sync/repos/audix",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_interpreter_path": "node",
+    "nodejs_package_manager_path": "npm",
+    "prettierjs.PrettierConfiguration.Package": "/Users/bendavison/sync/sync/repos/audix/node_modules/prettier",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "ts.external.directory.path": "/Users/bendavison/Library/Application Support/JetBrains/Toolbox/apps/WebStorm/ch-0/223.8617.44/WebStorm.app/Contents/plugins/javascript-impl/jsLanguageServicesImpl/external",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="ReactDesignerToolWindowState">
     <option name="myId2Visible">
       <map>
@@ -142,7 +139,8 @@
       <workItem from="1677592730709" duration="127000" />
       <workItem from="1677770451892" duration="17066000" />
       <workItem from="1677861023886" duration="8015000" />
-      <workItem from="1678320857018" duration="16116000" />
+      <workItem from="1678320857018" duration="20021000" />
+      <workItem from="1684335328791" duration="85000" />
     </task>
     <servers />
   </component>

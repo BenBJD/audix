@@ -7,109 +7,134 @@ const sequencerSlice = createSlice({
             instrumentId: 0,
             steps: [
                 // bar 1
-                { note: "E3", velocity: 0.5, duration: "8n" },
-                null,
-                null,
-                null,
+                { notes: [{ note: "E3", velocity: 0.5, duration: "8n" }] },
+                { notes: [] },
+                { notes: [] },
+                { notes: [] },
                 // 2
-                null,
-                null,
+                { notes: [] },
+                { notes: [] },
                 { note: "E3", velocity: 0.5, duration: "8n" },
-                null,
+                { notes: [] },
                 // 3
                 { note: "G3", velocity: 0.5, duration: "8n" },
-                null,
-                null,
+                { notes: [] },
+                { notes: [] },
                 { note: "E3", velocity: 0.5, duration: "8n" },
                 // 4
-                null,
-                null,
+                { notes: [] },
+                { notes: [] },
                 { note: "D3", velocity: 0.5, duration: "8n" },
-                null,
+                { notes: [] },
                 // 5
                 { note: "C3", velocity: 0.5, duration: "2n" },
-                null,
-                null,
-                null,
+                { notes: [] },
+                { notes: [] },
+                { notes: [] },
                 // 6
-                null,
-                null,
-                null,
-                null,
+                { notes: [] },
+                { notes: [] },
+                { notes: [] },
+                { notes: [] },
                 // 7
                 { note: "B2", velocity: 0.5, duration: "2n" },
-                null,
-                null,
-                null,
+                { notes: [] },
+                { notes: [] },
+                { notes: [] },
                 // 8
-                null,
-                null,
-                null,
-                null,
+                { notes: [] },
+                { notes: [] },
+                { notes: [] },
+                { notes: [] },
             ],
         },
         {
             instrumentId: 1,
             steps: [
                 // bar 1
-                { note: "E3", velocity: 0.5, duration: "8n" },
-                null,
-                null,
-                null,
+                { notes: [{ note: "E3", velocity: 0.5, duration: "8n" }] },
+                { notes: [] },
+                { notes: [] },
+                { notes: [] },
                 // 2
-                null,
-                null,
+                { notes: [] },
+                { notes: [] },
                 { note: "E3", velocity: 0.5, duration: "8n" },
-                null,
+                { notes: [] },
                 // 3
                 { note: "G3", velocity: 0.5, duration: "8n" },
-                null,
-                null,
+                { notes: [] },
+                { notes: [] },
                 { note: "E3", velocity: 0.5, duration: "8n" },
                 // 4
-                null,
-                null,
+                { notes: [] },
+                { notes: [] },
                 { note: "D3", velocity: 0.5, duration: "8n" },
-                null,
+                { notes: [] },
                 // 5
                 { note: "C3", velocity: 0.5, duration: "2n" },
-                null,
-                null,
-                null,
+                { notes: [] },
+                { notes: [] },
+                { notes: [] },
                 // 6
-                null,
-                null,
-                null,
-                null,
+                { notes: [] },
+                { notes: [] },
+                { notes: [] },
+                { notes: [] },
                 // 7
                 { note: "B2", velocity: 0.5, duration: "2n" },
-                null,
-                null,
-                null,
+                { notes: [] },
+                { notes: [] },
+                { notes: [] },
                 // 8
-                null,
-                null,
-                null,
-                null,
+                { notes: [] },
+                { notes: [] },
+                { notes: [] },
+                { notes: [] },
+            ],
+        },
+        {
+            instrumentId: 2,
+            steps: [
+                {
+                    notes: [
+                        { note: "C4", velocity: 0.5, duration: "8n" },
+                        { note: "E4", velocity: 0.5, duration: "8n" },
+                    ],
+                },
+                { notes: [] },
+                { notes: [{ note: "E4", velocity: 0.5, duration: "8n" }] },
+                { notes: [] },
+                {
+                    notes: [
+                        { note: "D4", velocity: 0.5, duration: "8n" },
+                        { note: "E4", velocity: 0.5, duration: "8n" },
+                    ],
+                },
+                { notes: [] },
+                { notes: [{ note: "E4", velocity: 0.5, duration: "8n" }] },
+                { notes: [] },
             ],
         },
     ],
     reducers: {
-        setStep: (state, action) => {
+        addNote: (state, action) => {
             const { instrumentId, stepIndex, value } = action.payload
             state.map((s) => {
                 if (s.instrumentId === instrumentId) {
-                    s.steps[stepIndex] = value
+                    s.steps[stepIndex].notes.push(value)
                     return s
                 }
                 return s
             })
         },
-        clearSteps: (state, action) => {
-            const { instrumentId } = action.payload
+        removeNote: (state, action) => {
+            const { instrumentId, stepIndex, notePitch } = action.payload
             state.map((s) => {
                 if (s.instrumentId === instrumentId) {
-                    s.steps.fill(null)
+                    s.steps[stepIndex].notes = s.steps[stepIndex].notes.filter(
+                        (n) => n.note !== notePitch
+                    )
                     return s
                 }
                 return s
@@ -118,11 +143,13 @@ const sequencerSlice = createSlice({
         setStepsNumber: (state, action) => {
             const { instrumentId, stepsNumber } = action.payload
             state.map((s) => {
-                if (s.id === instrumentId) {
+                if (s.instrumentId === instrumentId) {
                     if (s.length < stepsNumber) {
                         s.slice(0, action.payload)
                     } else {
-                        s.push(Array(stepsNumber - s.length).fill(null))
+                        s.push(
+                            Array(stepsNumber - s.length).fill({ notes: [] })
+                        )
                     }
                     return s
                 }
@@ -141,7 +168,8 @@ const sequencerSlice = createSlice({
 })
 
 export const {
-    setStep,
+    addNote,
+    removeNote,
     clearSteps,
     setStepsNumber,
     addSequencer,

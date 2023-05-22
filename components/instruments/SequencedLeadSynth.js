@@ -12,6 +12,7 @@ export const SequencedLeadSynth = (props) => {
         useSelector((state) => {
             return state.devices.find((d) => d.id === props.instrumentId)
         }).controls
+    // TODO: Handle creating state for instrument if not already created
 
     const dispatch = useDispatch()
 
@@ -40,16 +41,19 @@ export const SequencedLeadSynth = (props) => {
     const channel = new Tone.Channel()
     instrumentDevice.chain(channel, Tone.Destination)
 
-    // Create the sequencer
+    // Create sequencer
     const sequencer = new Tone.Sequence(
         (time, step) => {
-            if (step) {
-                instrumentDevice.triggerAttackRelease(
-                    step.note,
-                    step.duration,
-                    time,
-                    step.velocity
-                )
+            if (step.notes.length > 0) {
+                // loop over steps in each step
+                step.notes.forEach((note) => {
+                    instrumentDevice.triggerAttackRelease(
+                        note.note,
+                        note.duration,
+                        time,
+                        note.velocity
+                    )
+                })
             }
         },
         steps,

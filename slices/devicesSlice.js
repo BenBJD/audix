@@ -18,6 +18,7 @@ const devicesSlice = createSlice({
                 release: 0.01,
                 waveform: "sine",
             },
+            effectControls: {},
         },
         {
             id: 1,
@@ -34,6 +35,7 @@ const devicesSlice = createSlice({
                 release: 0.01,
                 waveform: "sine",
             },
+            effectControls: {},
         },
         {
             id: 2,
@@ -49,6 +51,7 @@ const devicesSlice = createSlice({
                 sustain: 0.5,
                 release: 0.01,
             },
+            effectControls: {},
         },
     ],
     reducers: {
@@ -64,6 +67,16 @@ const devicesSlice = createSlice({
             state = state.map((device) => {
                 if (device.id === action.payload.id) {
                     device.controls[action.payload.control] =
+                        action.payload.value
+                }
+                return device
+            })
+            return state
+        },
+        setEffectControls: (state, action) => {
+            state = state.map((device) => {
+                if (device.id === action.payload.id) {
+                    device.effectControls[action.payload.effect] =
                         action.payload.value
                 }
                 return device

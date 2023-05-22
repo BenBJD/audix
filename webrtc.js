@@ -1,59 +1,45 @@
-import { useDispatch } from "react-redux"
-import { clearSteps as monoClearSteps, setStep } from "./slices/sequencerSlice"
-import {
-    addNote,
-    removeNote,
-    clearSteps as polyClearSteps,
-} from "./slices/polySequencerSlice"
+import { useDispatch, useSelector } from "react-redux"
+import { addNote, removeNote, clearSteps } from "./slices/sequencerSlice"
 import { setInstrumentControl } from "./slices/devicesSlice"
 import Peer from "peerjs"
 import { LinkIcon } from "@heroicons/react/24/outline"
+import { useState } from "react"
+
+const peer = new Peer(Math.floor(Math.random() * 1000000), {
+    debug: 3,
+})
 
 export const PeerJSIcon = () => {
     const dispatch = useDispatch()
-    // const peer = new Peer(undefined, {
-    //     host: "peerjs.bjdhome.co.uk/",
-    //     port: 443,
-    //     path: "",
-    //     secure: true,
-    //     debug: 3,
-    // })
-    const peer = new Peer(undefined, {
-        debug: 3,
-    })
+    const [peerId, setPeerId] = useState("Not Set")
+
+    // State data if needed
+    const sequencers = useSelector((state) => state.sequencers)
+    const devices = useSelector((state) => state.devices)
 
     peer.on("open", (id) => {
-        console.log("My peer ID is: " + id)
+        setPeerId(id)
     })
 
     peer.on("connection", (conn) => {
         conn.on("action", (data) => {
             switch (data.type) {
-                case "setStep":
-                    dispatch(
-                        setStep({
-                            instrumentId: data.instrumentId,
-                            stepIndex: data.stepIndex,
-                            value: data.value,
-                        })
-                    )
-                    break
                 case "clearSteps":
                     dispatch(
-                        monoClearSteps({
+                        clearSteps({
                             instrumentId: data.instrumentId,
                         })
                     )
-                case "polyAddNote":
+                case "addNote":
                     dispatch(
                         addNote({
                             instrumentId: data.instrumentId,
                             stepIndex: data.stepIndex,
-                            value: data.value,
+                            note: data.note,
                         })
                     )
                     break
-                case "polyRemoveNote":
+                case "removeNote":
                     dispatch(
                         removeNote({
                             instrumentId: data.instrumentId,
@@ -62,12 +48,6 @@ export const PeerJSIcon = () => {
                         })
                     )
                     break
-                case "polyClearSteps":
-                    dispatch(
-                        polyClearSteps({
-                            instrumentId: data.instrumentId,
-                        })
-                    )
                 case "setInstrumentControl":
                     dispatch(
                         setInstrumentControl({
@@ -76,13 +56,38 @@ export const PeerJSIcon = () => {
                             value: data.value,
                         })
                     )
+                case "getSteps":
+                    conn.send({
+                        type: "getSteps",
+                        steps: sequencers.filter(
+                            (s) => s.instrumentId === data.instrumentId
+                        ).steps,
+                    })
+                    break
+                case "getInstrumentControls":
+                    conn.send({
+                        type: "getInstrumentControls",
+                        controls: devices.filter(
+                            (d) => d.id === data.instrumentId
+                        ).controls,
+                    })
+                    break
+                case "playNote":
+                    break
                 default:
                     break
             }
         })
-
-        conn.send("")
     })
 
-    return <LinkIcon className="h-6 w-6 text-green-500" />
+    return (
+        <div className={"flex flex-row basis-1/12"}>
+            {peerId !== "Not Set" ? (
+                <LinkIcon className="text-blue-500" />
+            ) : (
+                <LinkIcon className="text-red-500" />
+            )}
+            <p className={"m-auto"}>{peerId}</p>
+        </div>
+    )
 }
