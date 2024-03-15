@@ -5,8 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="041c8033-2b49-46ea-bd85-725cc58d9de1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/pages/_app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hooks.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Devices.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Devices.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/instruments/DrumKit.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/instruments/DrumKit.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/instruments/SequencedLeadSynth.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/instruments/SequencedLeadSynth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/slices/devicesSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/slices/devicesSlice.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/slices/polySequencerSlice.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/slices/sequencerSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/slices/sequencerSlice.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/store.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webrtc.js" beforeDir="false" afterPath="$PROJECT_DIR$/webrtc.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +29,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="JsBowerSettings">
@@ -40,9 +53,12 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "devel",
     "javascript.nodejs.core.library.configured.version": "18.12.1",
-    "javascript.nodejs.core.library.typings.version": "18.11.15",
+    "javascript.nodejs.core.library.typings.version": "18.16.12",
+    "last_opened_file_path": "/Users/bendavison/sync/repos/audix",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.standard": "true",
     "node.js.detected.package.tslint": "true",
@@ -53,7 +69,7 @@
     "nodejs_package_manager_path": "npm",
     "prettierjs.PrettierConfiguration.Package": "/Users/bendavison/sync/sync/repos/audix/node_modules/prettier",
     "settings.editor.selected.configurable": "preferences.pluginManager",
-    "ts.external.directory.path": "/Users/bendavison/Library/Application Support/JetBrains/Toolbox/apps/WebStorm/ch-0/222.4167.31/WebStorm.app/Contents/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external",
+    "ts.external.directory.path": "/Users/bendavison/Library/Application Support/JetBrains/Toolbox/apps/WebStorm/ch-0/223.8617.44/WebStorm.app/Contents/plugins/javascript-impl/jsLanguageServicesImpl/external",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -66,16 +82,32 @@
     </option>
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/samples" />
+      <recent name="\\wsl$\Ubuntu\home\ben\sync\sync\repos\audix\public\samples" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="\\wsl$\Ubuntu\home\ben\sync\sync\repos\audix\components" />
+      <recent name="\\wsl$\Ubuntu\home\ben\sync\sync\repos\audix\public" />
       <recent name="$PROJECT_DIR$/features/currentProject" />
       <recent name="$PROJECT_DIR$" />
     </key>
+    <key name="es6.move.members.recent.items">
+      <recent name="$PROJECT_DIR$/components/Devices.js" />
+      <recent name="$PROJECT_DIR$/pages/_app.js" />
+      <recent name="$PROJECT_DIR$/components/instruments/SequencedLeadSynth.js" />
+      <recent name="$PROJECT_DIR$/components/instruments/DrumKit.js" />
+      <recent name="$PROJECT_DIR$/components/Effects/DeviceEffect.js" />
+    </key>
   </component>
   <component name="RunManager">
-    <configuration name="Expo" type="js.build_tools.npm">
+    <configuration name="dev" type="js.build_tools.npm" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
-      <command value="start" />
-      <node-interpreter value="project" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="$USER_HOME$/.nvm/versions/node/v19.3.0/bin/node" />
       <envs />
       <method v="2" />
     </configuration>
@@ -89,11 +121,41 @@
       <option name="presentableId" value="Default" />
       <updated>1670799380128</updated>
       <workItem from="1670799381313" duration="2638000" />
-      <workItem from="1670890888897" duration="7877000" />
+      <workItem from="1670890888897" duration="14098000" />
+      <workItem from="1671234710864" duration="31701000" />
+      <workItem from="1671575349747" duration="6480000" />
+      <workItem from="1671897542259" duration="6784000" />
+      <workItem from="1673400766225" duration="5407000" />
+      <workItem from="1673460371652" duration="4571000" />
+      <workItem from="1673818817247" duration="193000" />
+      <workItem from="1673819188521" duration="40000" />
+      <workItem from="1673819243380" duration="1050000" />
+      <workItem from="1674003699482" duration="677000" />
+      <workItem from="1675686579198" duration="376000" />
+      <workItem from="1675704546916" duration="120000" />
+      <workItem from="1675964580517" duration="11662000" />
+      <workItem from="1677506233224" duration="219000" />
+      <workItem from="1677506472318" duration="11306000" />
+      <workItem from="1677592730709" duration="127000" />
+      <workItem from="1677770451892" duration="17066000" />
+      <workItem from="1677861023886" duration="8015000" />
+      <workItem from="1678320857018" duration="20021000" />
+      <workItem from="1684335328791" duration="85000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
